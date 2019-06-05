@@ -2,6 +2,8 @@
 
 set -e
 
+cd "$(dirname "$0")"
+
 STACK_NAME="StaticSite"
 STACK=$(aws cloudformation describe-stacks --stack-name $STACK_NAME)
 BUCKET_NAME=$(echo $STACK | jq -r ".Stacks[0].Outputs[] | select(.OutputKey|test(\"^StaticSiteBucket.*$\")) | .OutputValue")
