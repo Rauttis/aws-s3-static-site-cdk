@@ -29,7 +29,7 @@ $ npm run deploy -- -c domain=mystaticsite.com -c subdomain=www
 ```
 subdomain is optional.
 
-This might take a while as creating the cloudfront distribution can take up to 30 minutes.
+This might take a while as creating the cloudfront distribution for the first time can take up to 30 minutes.
 
 ### 3. Deploy Site Content
 Modify content inside `website/src/index.html` as you please.
