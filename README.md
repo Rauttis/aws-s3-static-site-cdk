@@ -6,22 +6,23 @@ The site redirects from HTTP to HTTPS, using a CloudFront distribution, Route53 
 Based on the [official CDK example](https://github.com/aws-samples/aws-cdk-examples/tree/master/typescript/static-site), but with a bunch of improvements. Subdomain is no longer required and deploying the content to S3 has been made easier.
 
 ## Prep
+
+### ACM certificate
 The ACM certificate is expected to be created and validated outside of the CDK, with the certificate ARN stored in an AWS Systems Manager Parameter Store parameter with the name `CertificateArn-subdomain.domain.domainextension`.
 
 ```
 $ aws ssm put-parameter --region eu-west-1 --name CertificateArn-www.mystaticsite.com --type String --value arn:aws:acm:...
 ```
 
-## Deployment
-
-### 1. Install/verify dependencies
-
+### Dependencies
 The following dependecines need to be installed and configured:
 - AWS cli
 - jq
 - Node 10+
 
-### 2. Deploy infrastructure
+## Deployment
+
+### 1. Deploy infrastructure
 ```
 $ cd aws
 $ npm i
@@ -31,7 +32,7 @@ subdomain is optional.
 
 This might take a while as creating the cloudfront distribution for the first time can take up to 30 minutes.
 
-### 3. Deploy site content
+### 2. Deploy site content
 Modify content inside `website/src/index.html` as you please.
 
 To deploy run
@@ -40,8 +41,8 @@ $ ./website/deploy.sh
 ```
 
 ### Updating site content
-Just run step 3 again. 
-You will only need to re-deploy the infrastructure if you make changes to the domain. In that case just run step 2 again with the new domain parameters.
+Just run step 2 again. 
+You will only need to re-deploy the infrastructure if you make changes to the domain. In that case just run step 1 again with the new domain parameters.
 
 ## Delete static site
 You can delete the entire stack with
