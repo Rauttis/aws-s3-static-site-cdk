@@ -16,7 +16,7 @@ $ aws ssm put-parameter --region eu-west-1 --name CertificateArn-www.mystaticsit
 
 ### 1. Install/verify Dependencies
 
-The following dependecines need to be installed:
+The following dependecines need to be installed and configured:
 - AWS cli
 - jq
 - Node 10+
