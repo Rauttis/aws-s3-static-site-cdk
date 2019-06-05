@@ -44,7 +44,7 @@ $ ./website/deploy.sh
 Just run step 2 again. 
 You will only need to re-deploy the infrastructure if you make changes to the domain. In that case just run step 1 again with the new domain parameters.
 
-## Delete static site
+## Deleting everything
 You can delete the entire stack with
 ```
 $ cd aws
