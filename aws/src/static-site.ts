@@ -31,7 +31,8 @@ export class StaticSite extends cdk.Construct {
     const siteBucket = new s3.Bucket(this, 'SiteBucket', {
       bucketName: siteDomain,
       websiteIndexDocument: 'index.html',
-      publicReadAccess: true
+      publicReadAccess: true,
+      removalPolicy: cdk.RemovalPolicy.Orphan
     })
     new cdk.CfnOutput(this, 'Bucket', { value: siteBucket.bucketName })
 

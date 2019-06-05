@@ -45,3 +45,5 @@ $ npm run destroy -- -c domain=mystaticsite.com
 ```
 
 or by deleting the stack manually in AWS cloudformation control panel.
+
+Note that the s3 bucket will not be removed. If you want to re-deploy the infrastructure with the same domain and subdomain, you need to delete the previously created s3 bucket.
