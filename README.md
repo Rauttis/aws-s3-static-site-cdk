@@ -14,14 +14,14 @@ $ aws ssm put-parameter --region eu-west-1 --name CertificateArn-www.mystaticsit
 
 ## Deployment
 
-### 1. Install/verify Dependencies
+### 1. Install/verify dependencies
 
 The following dependecines need to be installed and configured:
 - AWS cli
 - jq
 - Node 10+
 
-### 2. Deploy Infrastructure
+### 2. Deploy infrastructure
 ```
 $ cd aws
 $ npm i
@@ -31,7 +31,7 @@ subdomain is optional.
 
 This might take a while as creating the cloudfront distribution for the first time can take up to 30 minutes.
 
-### 3. Deploy Site Content
+### 3. Deploy site content
 Modify content inside `website/src/index.html` as you please.
 
 To deploy run
