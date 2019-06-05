@@ -1,10 +1,9 @@
 # AWS S3 Static site CDK
-Example on how to create the infrasturcture for a static S3 website using AWS CDK.
+Boilerplate for creating the infrastructure for a static S3 website using AWS CDK and deploying the website.
 
 The site redirects from HTTP to HTTPS, using a CloudFront distribution, Route53 alias record, and ACM certificate.
 
 Based on the [official CDK example](https://github.com/aws-samples/aws-cdk-examples/tree/master/typescript/static-site), but with a bunch of improvements. Subdomain is no longer required and deploying the content to S3 has been made easier.
-
 
 ## Prep
 The ACM certificate is expected to be created and validated outside of the CDK, with the certificate ARN stored in an AWS Systems Manager Parameter Store parameter.
