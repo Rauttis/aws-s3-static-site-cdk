@@ -6,7 +6,7 @@ The site redirects from HTTP to HTTPS, using a CloudFront distribution, Route53 
 Based on the [official CDK example](https://github.com/aws-samples/aws-cdk-examples/tree/master/typescript/static-site), but with a bunch of improvements. Subdomain is no longer required and deploying the content to S3 has been made easier.
 
 ## Prep
-The ACM certificate is expected to be created and validated outside of the CDK, with the certificate ARN stored in an AWS Systems Manager Parameter Store parameter with the name `CertificateArn-subdomain.domain.domainextension.`
+The ACM certificate is expected to be created and validated outside of the CDK, with the certificate ARN stored in an AWS Systems Manager Parameter Store parameter with the name `CertificateArn-subdomain.domain.domainextension`.
 
 ```
 $ aws ssm put-parameter --region eu-west-1 --name CertificateArn-www.mystaticsite.com --type String --value arn:aws:acm:...
