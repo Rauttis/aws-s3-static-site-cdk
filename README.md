@@ -41,7 +41,7 @@ $ ./website/deploy.sh
 
 ### Updating site content
 Just run step 3 again. 
-You will only need to re-deploy the infrastructure if you make changes to the domain. In that case just run step 2 again.
+You will only need to re-deploy the infrastructure if you make changes to the domain. In that case just run step 2 again with the new domain parameters.
 
 ## Delete static site
 You can delete the entire stack with
